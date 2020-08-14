@@ -30,6 +30,7 @@ public class Input {
             input = getInt(min, max);
 
         return input;
+        // Could refactor this to call getInt(); So cool.
     }
 
     public double getDouble() {
