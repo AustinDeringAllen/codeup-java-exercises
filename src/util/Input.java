@@ -12,10 +12,10 @@ public class Input {
         return scanner.nextLine();
     }
 
-    // Not sure how this one would work yet.
     public Boolean yesNo() {
         String input = getString();
-        return input.equalsIgnoreCase("y") || input.equalsIgnoreCase("yes") || input.equalsIgnoreCase("true");
+        System.out.println(input);
+        return input.equalsIgnoreCase("y") || input.equalsIgnoreCase("yes") || input.equalsIgnoreCase("true") || input.equalsIgnoreCase(("t"));
     }
 
     public int getInt() {
