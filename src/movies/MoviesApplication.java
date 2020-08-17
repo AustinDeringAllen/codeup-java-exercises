@@ -58,6 +58,7 @@ public class MoviesApplication {
                 displayMovies(categories[option-3]);
                 break;
         }
+        menu();
     }
 
     public static void displayMovies() {
@@ -66,7 +67,6 @@ public class MoviesApplication {
             System.out.printf("%s -- %s \n",movie.getName(),movie.getCategory());
         }
         System.out.println();
-        menu();
     }
 
     public static void displayMovies(String type) {
@@ -76,7 +76,6 @@ public class MoviesApplication {
                 System.out.printf("%s -- %s \n",movie.getName(),movie.getCategory());
         }
         System.out.println();
-        menu();
     }
 
     public static void addMovie() {
@@ -93,6 +92,5 @@ public class MoviesApplication {
         temp[temp.length-1] = new Movie(name, category.toLowerCase());
         movies = temp;
         getCategories();
-        menu();
     }
 }
