@@ -23,11 +23,12 @@ public class Input {
     }
 
     public int getInt(int min, int max) {
-        System.out.print("Enter a number between " +min+ " and " +max+ ": ");
         int input = scanner.nextInt();
 
-        if (input < min || input > max)
+        if (input < min || input > max) {
+            System.out.println("Error: Invalid Input");
             input = getInt(min, max);
+        }
 
         return input;
         // Could refactor this to call getInt(); So cool.
