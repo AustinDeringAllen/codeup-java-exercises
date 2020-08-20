@@ -14,7 +14,6 @@ public class Input {
 
     public Boolean yesNo() {
         String input = getString();
-        System.out.println(input);
         return input.equalsIgnoreCase("y") || input.equalsIgnoreCase("yes") || input.equalsIgnoreCase("true") || input.equalsIgnoreCase(("t"));
     }
 
