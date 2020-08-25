@@ -25,5 +25,8 @@ public class InputTest {
 
         decimal = input.getDouble(1,5);
         System.out.println("Your number is: " +decimal);
+
+        String binary = input.getBinary();
+        System.out.println("Your number in binary is: " +binary);
     }
 }

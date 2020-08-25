@@ -18,32 +18,60 @@ public class Input {
     }
 
     public int getInt() {
-        return scanner.nextInt();
+        int number;
+        try {
+            number = Integer.parseInt(getString());
+        } catch(NumberFormatException e) {
+            throw new NumberFormatException("Number entered was not a number");
+        }
+        return number;
     }
 
     public int getInt(int min, int max) {
-        int input = scanner.nextInt();
+        int number = getInt();
 
-        if (input < min || input > max) {
+        if (number < min || number > max) {
             System.out.println("Error: Invalid Input");
-            input = getInt(min, max);
+            number = getInt(min, max);
         }
 
-        return input;
-        // Could refactor this to call getInt(); So cool.
+        return number;
     }
 
     public double getDouble() {
-        return scanner.nextDouble();
+        double number;
+        try {
+            number = Double.parseDouble(getString());
+        } catch(NumberFormatException e) {
+            throw new NumberFormatException("Input could not be parsed to a number");
+        }
+        return number;
     }
 
     public double getDouble(double min, double max) {
         System.out.print("Enter a number between " +min+ " and " +max+ ": ");
-        double input = scanner.nextDouble();
+        double number;
 
-        if(input < min || input > max)
-            input = getDouble(min, max);
+        try {
+            number = Double.parseDouble(getString());
+        } catch(NumberFormatException e) {
+            throw new NumberFormatException("Input could not be parsed to a number");
+        }
 
-        return input;
+        if(number < min || number > max)
+            number = getDouble(min, max);
+
+        return number;
+    }
+
+    public String getBinary() {
+        int number;
+        try {
+            number = Integer.valueOf(getString());
+        } catch(NumberFormatException e) {
+            throw new NumberFormatException("Input could not be parsed to a number");
+        }
+
+        return Integer.toBinaryString(number);
     }
 }
